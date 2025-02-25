@@ -126,15 +126,14 @@ class WebhooksController extends BaseController
 
         return $this->execute($_reqBuilder, $_resHandler);
     }
-
+    
     /**
-     * @param string $webhookId Postback Config ID
+     * @param  string  $webhookId  Postback Config ID
      *
-     * @return ResponseWebhook Response from the API call
-     *
-     * @throws ApiException Thrown if API call fails
+     * @return \FortisAPILib\Models\ResponseWebhook|string Response from the API call
+     * @throws \FortisAPILib\Exceptions\ApiException Thrown if API call fails
      */
-    public function deleteAPostbackConfig(string $webhookId): ResponseWebhook
+    public function deleteAPostbackConfig(string $webhookId): ResponseWebhook|string
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::DELETE, '/v1/webhooks/{webhook_id}')
             ->auth(Auth::and('user-id', 'user-api-key', 'developer-id'))
