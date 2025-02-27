@@ -19,8 +19,10 @@ class Operator1Enum
     public const ENUM_0 = '>=';
 
     public const ENUM_1 = '<=';
+    
+    public const ENUM_2 = '=';
 
-    private const _ALL_VALUES = [self::ENUM_0, self::ENUM_1];
+    private const _ALL_VALUES = [self::ENUM_0, self::ENUM_1, self::ENUM_2];
 
     /**
      * Ensures that all the given values are present in this Enum.
