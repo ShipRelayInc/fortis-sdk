@@ -250,7 +250,7 @@ class TokensController extends BaseController
      *
      * @throws ApiException Thrown if API call fails
      */
-    public function deleteASingleTokenRecord(string $tokenId): ResponseToken
+    public function deleteASingleTokenRecord(string $tokenId): ResponseToken|string
     {
         $_reqBuilder = $this->requestBuilder(RequestMethod::DELETE, '/v1/tokens/{token_id}')
             ->auth(Auth::and('user-id', 'user-api-key', 'developer-id'))
