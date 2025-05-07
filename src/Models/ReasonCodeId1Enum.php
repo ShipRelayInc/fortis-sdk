@@ -916,10 +916,12 @@ class ReasonCodeId1Enum
      */
     public static function checkValue($value)
     {
-        $value = json_decode(json_encode($value), true); // converts stdClass into array
-        if (CoreHelper::checkValueOrValuesInList($value, self::_ALL_VALUES)) {
-            return $value;
-        }
-        throw new Exception("$value is invalid for ReasonCodeId1Enum.");
+        return json_decode(json_encode($value), true); // All reason codes are allowed.
+
+        // $value = json_decode(json_encode($value), true); // converts stdClass into array
+        // if (CoreHelper::checkValueOrValuesInList($value, self::_ALL_VALUES)) {
+        //     return $value;
+        // }
+        // throw new Exception("$value is invalid for ReasonCodeId1Enum.");
     }
 }
